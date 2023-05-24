@@ -13,6 +13,11 @@ img {
     max-width: 100%; 
 }
 
+ul {
+    list-style-type: none;
+}
+
+/* Header style */
 .header {
     background-color: #30598c;
     color: #fff;
@@ -22,6 +27,13 @@ img {
 
 .header-container {
     padding: 0 30px;
+    height: 100%;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 100%;
 }
 
@@ -47,32 +59,61 @@ img {
     width: 30px;
 }
 
-.menu ul {
+.menu .main-menu {
     display: flex;
 }
 
-.menu ul li {
+.menu .main-menu .menu-item {
     text-transform: uppercase;
     margin-right: 24px;
-}
+    position: relative;
 
-
-
-.header-inner {
+    height: 62px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 100%;
+
+    cursor: pointer;
 }
 
-.container 
+.menu .main-menu .menu-item:hover {
+    color: #c4c4c4;
+}
 
+.sub-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0,0,0,.15);
+    background-color: #fff;
+    border-radius: 4px;
+
+    display: none;
+}
+
+.menu .main-menu .menu-item:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu-item {
+    font-size: 15px;
+    cursor: pointer;
+    padding: 16px;
+    text-align: center;
+    text-transform: none;
+    color: #464646;
+}
+
+.sub-menu-item:hover {
+    background-color: #c4c4c4;
+    color: #fff;
+}
+
+/* Card stype */
 .container {
     width: 1200px;
     margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
 }
 
 .row {
@@ -111,6 +152,12 @@ img {
     font-weight: 400;
 }
 
+.card-content div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
 .card-content p {
     font-size: 14px;
     color: #757575;
@@ -121,24 +168,26 @@ img {
     color: #ffd600;
 }
 
+.box {
+    width: 600px;
+    height: 300px;
+    background-color: black;
+    color: #fff;
 
-.type {
-    margin: 20px 0;
+    padding: 30px;
+    border: 20px solid red;
 }
 
-
-.item {
-    width: 1000px;
-    height: auto;
-    font-size: 32px;
-    border: 2px ;
+.footer_container{
+    background-color: #30598c;
+    display: flex;
+    flex-direction: row;
     justify-content:space-between;
 }
-h1{
-    margin-top: 8%;
-    margin-left: 5%;
-    font-size: 25px;
-    color: white;
+
+.footer_container {
+    padding: 0 30px;
+    height: 100%;
 }
 
 p{
@@ -164,3 +213,19 @@ a{
     padding: 0 30px;
     height: 100%;
 }
+
+h1{
+    margin-top: 8%;
+    margin-left: 5%;
+    font-size: 25px;
+    color: white;
+}
+
+.item {
+    width: 1000px;
+    height: auto;
+    font-size: 32px;
+    border: 2px ;
+    justify-content:space-between;
+}
+
