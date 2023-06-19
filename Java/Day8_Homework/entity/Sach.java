@@ -1,53 +1,67 @@
 package Day8_Homework.entity;
 
-public class Sach implements InputInfo{
+import Day8_Homework.statics.LoaiChuyenNganh;
 
-    private  static int AUTO_ID=10000;
+public class Sach {
+    private static int AUTO_ID = 10000;
 
-    private int MaSach;
-    private String TenSach;
-    private String TacGia;
-    private String ChuyenNganh;
-    private int NamSuatBan;
+    protected int MaSach;
+    protected String TenSach;
+    protected String TacGia;
+    protected LoaiChuyenNganh chuyennganh;
+    protected String NamXuatBan;
+
+    public Sach(){
+        this.MaSach= AUTO_ID;
+        AUTO_ID++;
+    }
 
     public int getMaSach() {
+
         return MaSach;
     }
 
     public void setMaSach(int maSach) {
+
         MaSach = maSach;
     }
 
     public String getTenSach() {
+
         return TenSach;
     }
 
     public void setTenSach(String tenSach) {
+
         TenSach = tenSach;
     }
 
     public String getTacGia() {
+
         return TacGia;
     }
 
     public void setTacGia(String tacGia) {
+
         TacGia = tacGia;
     }
 
-    public String getChuyenNganh() {
-        return ChuyenNganh;
+    public LoaiChuyenNganh getChuyennganh() {
+        return chuyennganh;
     }
 
-    public void setChuyenNganh(String chuyenNganh) {
-        ChuyenNganh = chuyenNganh;
+    public void setChuyennganh(LoaiChuyenNganh chuyennganh) {
+        this.chuyennganh = chuyennganh;
     }
 
-    public int getNamSuatBan() {
-        return NamSuatBan;
+    public String getNamXuatBan() {
+
+        return NamXuatBan;
     }
 
-    public void setNamSuatBan(int namSuatBan) {
-        NamSuatBan = namSuatBan;
+    public void setNamXuatBan(String namXuatBan) {
+
+        NamXuatBan = namXuatBan;
     }
 
     @Override
@@ -56,12 +70,9 @@ public class Sach implements InputInfo{
                 "MaSach=" + MaSach +
                 ", TenSach='" + TenSach + '\'' +
                 ", TacGia='" + TacGia + '\'' +
-                ", ChuyenNganh='" + ChuyenNganh + '\'' +
-                ", NamSuatBan=" + NamSuatBan +
+                ", chuyennganh=" + chuyennganh +
+                ", NamXuatBan='" + NamXuatBan + '\'' +
                 '}';
     }
-
-    @Override
-    public static void inputInfo(){
-    }
 }
+

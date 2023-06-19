@@ -1,8 +1,6 @@
 package Day8_Homework.entity;
 
-import java.util.Scanner;
-
-public class Nguoi implements InputInfo{
+public class Nguoi {
     protected String HoTen;
     protected String DiaChi;
     protected String SĐT;
@@ -38,15 +36,5 @@ public class Nguoi implements InputInfo{
                 ", DiaChi='" + DiaChi + '\'' +
                 ", SĐT='" + SĐT + '\'' +
                 '}';
-    }
-
-    @Override
-    public void inputInfo(){
-        System.out.println("Nhập họ tên:");
-        this.setHoTen(new Scanner(System.in).nextLine());
-        System.out.println("Nhập địa chỉ:");
-        this.setDiaChi(new Scanner(System.in).nextLine());
-        System.out.println("Nhập số điện thoại:");
-        this.setSĐT(new Scanner(System.in).nextLine());
     }
 }
