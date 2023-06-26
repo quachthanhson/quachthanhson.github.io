@@ -2,10 +2,7 @@ package QuanLyTraLuongThinhGiang.Main;
 
 import QuanLyTraLuongThinhGiang.entity.Subject;
 import QuanLyTraLuongThinhGiang.entity.Teacher;
-import QuanLyTraLuongThinhGiang.entity.TeachingManagementDetail;
-import QuanLyTraLuongThinhGiang.statics.TeacherLevel;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 
@@ -36,7 +33,6 @@ public class Main {
                     showSubject();
                     break;
                 case 5:
-                    inpurNewTeaching();
                     break;
                 case 6:
                     break;
@@ -46,49 +42,6 @@ public class Main {
                     break;
                 case 9:
                     return;
-
-            }
-        }
-    }
-
-    private static void inpurNewTeaching() {
-        System.out.println("Nhập số giảng viên bạn muốn phân công giảng dạy");
-        int teacherNumber = new Scanner(System.in).nextInt();
-        for (int i = 0; i < teacherNumber; i++) {
-            System.out.println("Nhập thông tin cho giảng viên thứ " + (i+1) + "muốn phân công giảng dạy.");
-            System.out.println("Nhập ID giảng viên: ");
-            int teacherID =new Scanner(System.in).nextInt();
-            Teacher teacher = null;
-            for (int j = 0; j < teachers.length; j++) {
-                if(teachers[j].getId() == teacherID){
-                    teacher = teachers[j]
-                }
-            }
-            System.out.println("Ông này dạy bao nhiêu môn: ");
-            int subjectNumber = new Scanner(System.in).nextInt();
-            for (int j = 0; j < subjectNumber; j++) {
-                System.out.println("Môn học thứ " + (j + 1) + "mà ông này dạy là môn nào: ");
-                int subjectId = new Scanner(System.in).nextInt();
-                Subject subject;
-                for (int k = 0; k < subjects.length; k++) {
-                    if(subjects[k].getId() == subjectId){
-                        subject = subjects[k];
-                        break;
-                    }
-                }
-                System.out.println("Môn này ông dạy bao nhiêu lớp");
-                int classNumber = new Scanner(System.in).nextInt();
-                do{
-                    classNumber =new Scanner(System.in).nextInt();
-                    if(classNumber <1 || classNumber >3){
-                        System.out.println("Số lớp phải là số dương và nhỏ hơn 3. ");
-                        continue;
-                    }
-                    break;
-                }while (true);
-                TeachingManagementDetail teachingManagementDetail = new TeachingManagementDetail(subject, classNumber);
-                saceTeaching
-
 
             }
         }
@@ -177,3 +130,4 @@ public class Main {
         }
     }
 }
+
